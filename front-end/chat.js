@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showTypingIndicator();
 
         try {
-            const response = await fetch('http://localhost:8000/chat', {
+            const response = await fetch('https://web-production-2fc6.up.railway.app/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchChatHistoryFromMongoDB() {
         try {
-            const response = await fetch('http://localhost:8000/chat_history?user_id=default_user');
+            const response = await fetch('https://web-production-2fc6.up.railway.app/chat_history?user_id=default_user');
             const history = await response.json();
             allChats = history.map(chat => chat.messages);
             currentChatIndex = allChats.length - 1;
